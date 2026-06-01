@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/roldan-eng-software/roldanflix/static/css/main.d84451e2.css",
+    "main.js": "/roldan-eng-software/roldanflix/static/js/main.c6ca5e4c.js",
+    "index.html": "/roldan-eng-software/roldanflix/index.html",
+    "main.d84451e2.css.map": "/roldan-eng-software/roldanflix/static/css/main.d84451e2.css.map",
+    "main.c6ca5e4c.js.map": "/roldan-eng-software/roldanflix/static/js/main.c6ca5e4c.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d84451e2.css",
+    "static/js/main.c6ca5e4c.js"
+  ]
+}
