@@ -1,0 +1,75 @@
+
+
+.filme-info {
+    margin-top: 18px;
+    display: flex;
+    flex-direction: column;
+    max-width: 800px;
+    padding: 0 8px;
+}
+
+.filme-info h1 {
+    font-size: 32px;
+    margin-bottom: 8px;
+}
+
+.filme-info p {
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 16px;
+}
+
+.filme-info .avaliacao {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.filme-info .avaliacao span {
+    font-size: 18px;
+    margin-left: 8px;
+}
+
+.filme-info .descricao {
+    margin-bottom: 16px;
+    line-height: 1.5;
+}
+
+.filme-info .sinopse {
+    margin-bottom: 16px;
+    line-height: 1.5;
+}
+
+.filme-info img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 8px;
+    margin-bottom: 16px;
+}
+
+.area-buttons button {
+    margin-right: 12px;
+    margin-top: 14px;
+    margin-left: 0px;
+    font-size: 20px;
+    border: none;
+    padding: 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+.area-buttons button:hover {
+    background-color: #f36005a5;
+    color: #fff;
+  }
+
+.area-buttons salvar {
+    background-color: #007bff;
+    color: #fff;
+  }
+
+.area-buttons trailer {
+    background-color: #28a745;
+    color: #fff;
+  }
