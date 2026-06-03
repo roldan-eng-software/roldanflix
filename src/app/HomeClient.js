@@ -10,6 +10,7 @@ export default function HomeClient() {
   const [filmes, setFilmes] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
+  const [page, setPage] = useState(1);
 
   useEffect(() => {
     async function loadFilmes() {
@@ -17,7 +18,7 @@ export default function HomeClient() {
       setError("");
 
       try {
-        setFilmes(await getNowPlayingMovies());
+        setFilmes(await getNowPlayingMovies({ page }));
       } catch {
         setFilmes([]);
         setError("Não foi possível carregar os filmes agora.");
@@ -27,7 +28,21 @@ export default function HomeClient() {
     }
 
     loadFilmes();
-  }, []);
+  }, [page]);
+
+  function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+
+  function goToFirstPage() {
+    scrollToTop();
+    setPage(1);
+  }
+
+  function goToNextPage() {
+    scrollToTop();
+    setPage((currentPage) => currentPage + 1);
+  }
 
   return (
     <div className="App">
@@ -56,6 +71,18 @@ export default function HomeClient() {
             );
           })}
         </div>
+
+        {!loading && !error && filmes.length > 0 && (
+          <nav className="pagination" aria-label="Navegação de páginas">
+            <button type="button" onClick={goToFirstPage} disabled={page === 1}>
+              Primeira página
+            </button>
+            <span>Página {page}</span>
+            <button type="button" onClick={goToNextPage}>
+              Próxima página
+            </button>
+          </nav>
+        )}
       </div>
     </div>
   );
