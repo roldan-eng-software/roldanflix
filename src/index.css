@@ -1,3 +1,9 @@
+@import "./components/Header/Header.css";
+@import "./views/Home/home.css";
+@import "./views/Filme/filme-info.css";
+@import "./views/Favoritos/favoritos.css";
+@import "./views/Erro/erro.css";
+
 *{
   margin: 0;
   padding: 0;

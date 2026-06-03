@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import './favoritos.css';
 import { Link } from "react-router-dom";
 
 function Favoritos() {
@@ -47,4 +46,3 @@ function excluirFilme(id) {
 }
 
 export default Favoritos;
-
