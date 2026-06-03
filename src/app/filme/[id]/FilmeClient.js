@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import Header from "../../../components/Header";
-import api from "../../../services/api";
+import { getMovieDetails } from "../../../services/tmdb";
 
 export default function FilmeClient({ id }) {
   const [filme, setFilme] = useState({});
@@ -16,14 +16,7 @@ export default function FilmeClient({ id }) {
       setLoading(true);
 
       try {
-        const response = await api.get(`movie/${id}`, {
-          params: {
-            language: "pt-BR",
-            page: 1,
-          },
-        });
-
-        setFilme(response.data);
+        setFilme(await getMovieDetails(id));
       } catch {
         console.log("Filme não encontrado");
         router.replace("/");

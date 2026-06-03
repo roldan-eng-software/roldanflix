@@ -3,21 +3,18 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import Header from "../components/Header";
-import api from "../services/api";
+import { getNowPlayingMovies } from "../services/tmdb";
 
 export default function HomeClient() {
   const [filmes, setFilmes] = useState([]);
 
   useEffect(() => {
     async function loadFilmes() {
-      const response = await api.get("movie/now_playing", {
-        params: {
-          language: "pt-BR",
-          page: 1,
-        },
-      });
-
-      setFilmes(response.data.results.slice(0, 10));
+      try {
+        setFilmes(await getNowPlayingMovies());
+      } catch {
+        setFilmes([]);
+      }
     }
 
     loadFilmes();
