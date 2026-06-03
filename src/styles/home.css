@@ -13,6 +13,14 @@
   margin-top: 50px;
 }
 
+.feedback-message {
+  width: 100%;
+  text-align: center;
+  font-size: 18px;
+  color: #000;
+  margin: 32px auto;
+}
+
 .lista-filmes article {
   width: 100%;
   background-color: #fff;

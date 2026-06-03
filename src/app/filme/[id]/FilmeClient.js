@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -9,16 +10,19 @@ import { getMovieDetails } from "../../../services/tmdb";
 export default function FilmeClient({ id }) {
   const [filme, setFilme] = useState({});
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
   const router = useRouter();
 
   useEffect(() => {
     async function loadFilme() {
       setLoading(true);
+      setError("");
 
       try {
         setFilme(await getMovieDetails(id));
       } catch {
         console.log("Filme não encontrado");
+        setError("Filme não encontrado. Redirecionando para a página inicial...");
         router.replace("/");
       } finally {
         setLoading(false);
@@ -49,12 +53,15 @@ export default function FilmeClient({ id }) {
 
       <div className="filme-info">
         {loading && <p>Carregando detalhes...</p>}
-        {!loading && (
+        {!loading && error && <p className="feedback-message">{error}</p>}
+        {!loading && !error && (
           <div>
             <h1>{filme.title}</h1>
-            <img
+            <Image
               src={`https://image.tmdb.org/t/p/original/${filme.backdrop_path}`}
               alt={filme.title}
+              width={400}
+              height={225}
             />
             <h2>{filme.title}</h2>
             <p>{filme.overview}</p>
