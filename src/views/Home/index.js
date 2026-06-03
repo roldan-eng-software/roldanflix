@@ -2,8 +2,6 @@ import { useState, useEffect} from "react";
 import api from "../../services/api";
 import { Link } from "react-router-dom";
 
-// URL da API: /movie/now_playing?api_key=bed02c24cbee0d266218494a6f7486fe&language=pt-BR
-
 function Home() {
   const [filmes, setFilmes] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -13,7 +11,6 @@ function Home() {
       setLoading(true);
       const response = await api.get("movie/now_playing",{
         params: {
-                api_key: "bed02c24cbee0d266218494a6f7486fe",
                 language: "pt-BR",
                 page: 1,
             }

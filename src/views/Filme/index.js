@@ -11,7 +11,6 @@ function Filme() {
     async function loadFilme() {
       await api.get(`movie/${id}`,{
         params: {
-                api_key: "bed02c24cbee0d266218494a6f7486fe",
                 language: "pt-BR",
                 page: 1,
             }
