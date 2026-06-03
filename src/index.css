@@ -1,8 +1,8 @@
-@import "./components/Header/Header.css";
-@import "./views/Home/home.css";
-@import "./views/Filme/filme-info.css";
-@import "./views/Favoritos/favoritos.css";
-@import "./views/Erro/erro.css";
+@import "./styles/header.css";
+@import "./styles/home.css";
+@import "./styles/filme-info.css";
+@import "./styles/favoritos.css";
+@import "./styles/erro.css";
 
 *{
   margin: 0;
