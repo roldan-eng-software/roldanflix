@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
+import Header from "../../../components/Header";
 import api from "../../../services/api";
 
 export default function FilmeClient({ id }) {
@@ -51,15 +52,7 @@ export default function FilmeClient({ id }) {
 
   return (
     <div className="App">
-      <header>
-        <Link className="logo" href="/">
-          RoldanFlix
-        </Link>
-        <Link className="favoritos" href="/favoritos">
-          Meus Filmes
-        </Link>
-        <h1>Header</h1>
-      </header>
+      <Header />
 
       <div className="filme-info">
         {loading && <p>Carregando detalhes...</p>}

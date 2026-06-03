@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Header from "../components/Header";
 
 export const metadata = {
   title: "Pagina nao encontrada | RoldanFlix",
@@ -7,15 +8,7 @@ export const metadata = {
 export default function NotFound() {
   return (
     <div className="App">
-      <header>
-        <Link className="logo" href="/">
-          RoldanFlix
-        </Link>
-        <Link className="favoritos" href="/favoritos">
-          Meus Filmes
-        </Link>
-        <h1>Header</h1>
-      </header>
+      <Header />
 
       <div>
         <h1>404 - Página não encontrada</h1>

@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import Header from "../../components/Header";
 
 export default function FavoritosClient() {
   const [filmes, setFilmes] = useState([]);
@@ -20,15 +21,7 @@ export default function FavoritosClient() {
 
   return (
     <div className="App">
-      <header>
-        <Link className="logo" href="/">
-          RoldanFlix
-        </Link>
-        <Link className="favoritos" href="/favoritos">
-          Meus Filmes
-        </Link>
-        <h1>Header</h1>
-      </header>
+      <Header />
 
       <div className="meus-filmes">
         <h1>Meus Filmes</h1>

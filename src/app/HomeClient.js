@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import Header from "../components/Header";
 import api from "../services/api";
 
 export default function HomeClient() {
@@ -24,15 +25,7 @@ export default function HomeClient() {
 
   return (
     <div className="App">
-      <header>
-        <Link className="logo" href="/">
-          RoldanFlix
-        </Link>
-        <Link className="favoritos" href="/favoritos">
-          Meus Filmes
-        </Link>
-        <h1>Header</h1>
-      </header>
+      <Header />
 
       <div className="container">
         <div className="lista-filmes">
